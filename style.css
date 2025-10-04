@@ -3,7 +3,7 @@ body {
     overflow: hidden; 
     background-color: #eee;
 }
-#sprite {
+#puffs {
     width: 32px;
     height: 32px;
     background-image: url('puffs.png'); 
