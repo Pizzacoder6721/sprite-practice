@@ -50,3 +50,5 @@ function gameLoop() {
     updatePuffPos();
     requestAnimationFrame(gameLoop);
 }
+updatePuffPos();
+gameLoop();
