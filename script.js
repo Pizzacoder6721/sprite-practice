@@ -11,7 +11,7 @@ function updatePuffPos(){
 } 
 
 //Annoying event listener
-document.addEventListener("keyDown", (event) => {
+document.addEventListener("keydown", (event) => {
   switch (event.key){
     case "ArrowUp":
     case "w":
