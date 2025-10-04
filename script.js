@@ -15,22 +15,22 @@ document.addEventListener("keyDown", (event) => {
   switch (event.key){
     case "ArrowUp":
     case "w":
-      puffY -= speed;
+      puffY -= puffSpeed;
       break;
     
     case "ArrowDown":
     case "s":
-      puffY += speed;
+      puffY += puffSpeed;
       break;
 
     case "ArrowLeft":
     case "a":
-      puffX -= speed;
+      puffX -= puffSpeed;
       break;
 
     case "ArrowRight":
     case "d":
-      puffX += speed;
+      puffX += puffSpeed;
       break;
   }
   updatePuffPos();
