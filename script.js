@@ -4,35 +4,38 @@ const puff = document.getElementById('puffs');
 let puffX = 0;
 let puffY = 0;
 const puffSpeed = 5;
-//update puff pos
-function updatePuffPos(){
-  puff.style.left = `${puffX}px`;
-  puff.style.top = `${puffY}px`;
-} 
 
-//Annoying event listener
-document.addEventListener("keydown", (event) => {
-  switch (event.key){
-    case "ArrowUp":
-    case "w":
-      puffY -= puffSpeed;
-      break;
-    
-    case "ArrowDown":
-    case "s":
-      puffY += puffSpeed;
-      break;
+const keysPressed = {};
 
-    case "ArrowLeft":
-    case "a":
-      puffX -= puffSpeed;
-      break;
-
-    case "ArrowRight":
-    case "d":
-      puffX += puffSpeed;
-      break;
+function updatePuffPos() {
+    puff.style.left = `${puffX}px`;
+    puff.style.top = `${puffY}px`;
   }
-  updatePuffPos();
+
+document.addEventListener("keydown", (event) => {
+  keysPressed[event.key.toLowerCase()] = true;
 });
+
+document.addEventListener("keyup", (event) => {
+  keysPressed[event.key.toLowerCase()] = true;
+});
+
+function gameLoop() {
+  if(keysPressed["arrowup"] || keysPressed["w"]){
+    puffY -= puffSpeed;
+  }
+  if(keysPressed["arrowdown"] || keysPressed["s"]){
+    puffY += puffSpeed;
+  }
+  if(keysPressed["arrowright"] || keysPressed["d"]){
+    puffX += puffSpeed;
+  }
+  if(keysPressed["arrowleft"] || keysPressed["a"]){
+    puffX -= puffSpeed
+  }
+
+  updatePuffPos();
+  requestAnimationFrame(gameLoop);
+}
 updatePuffPos();
+gameLoop();
