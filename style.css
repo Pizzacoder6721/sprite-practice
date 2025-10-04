@@ -5,7 +5,7 @@ body {
 }
 #puffs {
     width: 593px;
-    hight: 458px;
+    height: 458px;
     background-image: url('puffs.png'); 
     background-position: 0 0;
     position: absolute;
