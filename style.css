@@ -6,7 +6,7 @@ body {
 #puffs {
     width: 32px;
     height: 32px;
-    background-image: url('C:\Users\Pizza\Downloads\puffs.png'); 
+    background-image: url('puffs.png'); 
     background-position: 0 0;
     position: absolute;
     top: 50px;
