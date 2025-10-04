@@ -17,7 +17,7 @@ document.addEventListener("keydown", (event) => {
 });
 
 document.addEventListener("keyup", (event) => {
-  keysPressed[event.key.toLowerCase()] = true;
+  keysPressed[event.key.toLowerCase()] = false;
 });
 
 function gameLoop() {
