@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    overflow: hidden; 
+    background-color: #eee;
+}
+#sprite {
+    width: 32px;
+    height: 32px;
+    background-image: url('puffs.png'); 
+    background-position: 0 0;
+    position: absolute;
+    top: 50px;
+    left: 50px;/
+}
