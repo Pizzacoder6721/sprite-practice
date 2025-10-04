@@ -6,8 +6,8 @@ let puffY = 0;
 const puffSpeed = 5;
 //update puff pos
 function updatePuffPos(){
-  sprite.style.left = `${x}px`;
-  sprite.style.top = `${y}px`;
+  puff.style.left = `${x}px`;
+  puff.style.top = `${y}px`;
 } 
 
 //Annoying event listener
