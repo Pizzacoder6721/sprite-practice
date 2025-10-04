@@ -4,11 +4,11 @@ body {
     background-color: #eee;
 }
 #puffs {
-    width: 593px;
-    height: 458px;
+    width: 148.25px;
+    height: 114.5px;
     background-image: url('puffs.png'); 
-    background-position: 0 0;
+    background-size: 100% 100%;
     position: absolute;
     top: 50px;
-    left: 50px;/
+    left: 50px;
 }
