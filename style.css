@@ -4,8 +4,6 @@ body {
     background-color: #eee;
 }
 #puffs {
-    width: 32px;
-    height: 32px;
     background-image: url('puffs.png'); 
     background-position: 0 0;
     position: absolute;
