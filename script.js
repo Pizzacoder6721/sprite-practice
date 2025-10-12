@@ -50,10 +50,10 @@ function gameLoop() {
     if (puffX > screenWidth - puffWidth) puffX = screenWidth - puffWidth;
     if (puffY > screenHeight - puffHeight) puffY = screenHeight - puffHeight;
 
-      velocityX *= 0.95;
-      velocityY *= 0.95;
-      x += velocityX;
-      y += velocityY;
+      puffVelocityX *= 0.95;
+      puffVelocityY *= 0.95;
+      x += puffVelocityX;
+      y += puffVelocityY;
 
     updatePuffPos();
     requestAnimationFrame(gameLoop);
