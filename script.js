@@ -57,7 +57,7 @@ function gameLoop() {
 
     updatePuffPos();
     requestAnimationFrame(gameLoop);
-    console.log(keysPressed);
+    console.log(a == true);
 }
 updatePuffPos();
 gameLoop();
