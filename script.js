@@ -16,7 +16,8 @@ function updatePuffPos() {
   }
 //event listener to know when keys are pressed
 document.addEventListener("keydown", (event) => {
-  keysPressed[event.key.toLowerCase()] = true;
+    keysPressed[event.key.toLowerCase()] = true;
+    console.log(`Key down: ${event.key}`);
 });
 
 document.addEventListener("keyup", (event) => {
