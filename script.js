@@ -52,8 +52,8 @@ function gameLoop() {
 
       puffVelocityX *= 0.95;
       puffVelocityY *= 0.95;
-      x += puffVelocityX;
-      y += puffVelocityY;
+      puffX += puffVelocityX;
+      puffY += puffVelocityY;
 
     updatePuffPos();
     requestAnimationFrame(gameLoop);
