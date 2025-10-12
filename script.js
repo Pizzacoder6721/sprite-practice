@@ -1,5 +1,6 @@
 //Puff Sprite
 const puff = document.getElementById('puffs');
+const gun = document.getElementById('gun');
 //movement
 let puffX = 0;
 let puffY = 0;
@@ -9,11 +10,31 @@ const keysPressed = {};
 
 let puffVelocityX = 0;
 let puffVelocityY = 0;
-//The point of this is pretty self-explanatiry
+
+let mouseX = 0;
+let mouseY = 0;
+
+document.addEventListener("mousemove", (event) => {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+});
+
 function updatePuffPos() {
     puff.style.left = `${puffX}px`;
     puff.style.top = `${puffY}px`;
-  }
+
+    // Update gun rotation
+    const puffRect = puff.getBoundingClientRect();
+    const puffCenterX = puffRect.left + puffRect.width / 2;
+    const puffCenterY = puffRect.top + puffRect.height / 2;
+
+    const dx = mouseX - puffCenterX;
+    const dy = mouseY - puffCenterY;
+
+    const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+    gun.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+}
+
 //event listener to know when keys are pressed
 document.addEventListener("keydown", (event) => {
     keysPressed[event.key.toLowerCase()] = true;
