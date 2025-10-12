@@ -6,6 +6,9 @@ let puffY = 0;
 const puffSpeed = 5;
 
 const keysPressed = {};
+
+let puffVelocityX = 0;
+let puffVelocityY = 0;
 //The point of this is pretty self-explanatiry
 function updatePuffPos() {
     puff.style.left = `${puffX}px`;
@@ -29,16 +32,16 @@ function gameLoop() {
 
   
     if (keysPressed["arrowup"] || keysPressed["w"]) {
-        puffY -= puffSpeed;
+        puffVelocityY -= puffSpeed;
     }
     if (keysPressed["arrowdown"] || keysPressed["s"]) {
-        puffY += puffSpeed;
+        puffVelocityY += puffSpeed;
     }
     if (keysPressed["arrowright"] || keysPressed["d"]) {
-        puffX += puffSpeed;
+        puffVelocityX += puffSpeed;
       }
     if (keysPressed["arrowleft"] || keysPressed["a"]) {
-        puffX -= puffSpeed;
+        puffVelocityX -= puffSpeed;
     }
 
     // Collision
@@ -46,6 +49,11 @@ function gameLoop() {
     if (puffY < 0) puffY = 0;
     if (puffX > screenWidth - puffWidth) puffX = screenWidth - puffWidth;
     if (puffY > screenHeight - puffHeight) puffY = screenHeight - puffHeight;
+
+      velocityX *= 0.95;
+      velocityY *= 0.95;
+      x += velocityX;
+      y += velocityY;
 
     updatePuffPos();
     requestAnimationFrame(gameLoop);
