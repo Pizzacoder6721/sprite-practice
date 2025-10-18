@@ -67,9 +67,6 @@ function gameLoop() {
             onGround = true;
         }
     }     
-    else{
-        onGround = false;
-    }
     if (!onGround){
         gravity += 0.3;
     }
