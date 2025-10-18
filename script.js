@@ -4,6 +4,7 @@ const puff = document.getElementById('puffs');
 let puffX = 0;
 let puffY = 0;
 const puffSpeed = 0.5;
+let jumpForce = -0.7;
 
 const keysPressed = {};
 
@@ -36,19 +37,15 @@ function gameLoop() {
 
 
     if (keysPressed["arrowup"] || keysPressed["w"]) {
-        puffY -= puffSpeed;
         puffVelocityY -= puffSpeed;
     }
     if (keysPressed["arrowdown"] || keysPressed["s"]) {
-        puffY += puffSpeed;
         puffVelocityY += puffSpeed;
     }
     if (keysPressed["arrowright"] || keysPressed["d"]) {
-        puffX += puffSpeed;
         puffVelocityX += puffSpeed;
       }
     if (keysPressed["arrowleft"] || keysPressed["a"]) {
-        puffX -= puffSpeed;
         puffVelocityX -= puffSpeed;
     }
 
@@ -65,7 +62,7 @@ function gameLoop() {
         gravity = 0;
     }
     else{
-        gravity = 1;
+        gravity = 0.7;
     }
 
     puffVelocityX *= 0.95;
