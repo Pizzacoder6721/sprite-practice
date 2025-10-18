@@ -63,7 +63,7 @@ function gameLoop() {
     }
 
     puffVelocityX *= 0.95;
-    puffVelocityY += gravity;
+    puffVelocityY = gravity;
     puffX += puffVelocityX;
     puffY += puffVelocityY;
 
