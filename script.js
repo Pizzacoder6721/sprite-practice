@@ -10,7 +10,7 @@ const keysPressed = {};
 let puffVelocityX = 0;
 let puffVelocityY = 0;
 
-let gravity = 11;
+let gravity = 1;
 //The point of this is pretty self-explanatiry
 function updatePuffPos() {
     puff.style.left = `${puffX}px`;
