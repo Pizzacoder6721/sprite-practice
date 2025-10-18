@@ -9,6 +9,8 @@ const keysPressed = {};
 
 let puffVelocityX = 0;
 let puffVelocityY = 0;
+
+let gravity = 11;
 //The point of this is pretty self-explanatiry
 function updatePuffPos() {
     puff.style.left = `${puffX}px`;
@@ -55,7 +57,7 @@ function gameLoop() {
     if (puffY > screenHeight - puffHeight) puffY = screenHeight - puffHeight;
 
       puffVelocityX *= 0.95;
-      puffVelocityY *= 0.95;
+      puffVelocityY += gravity;
       puffX += puffVelocityX;
       puffY += puffVelocityY;
 
