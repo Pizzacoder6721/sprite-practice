@@ -80,12 +80,15 @@ function gameLoop() {
   if (isOverlapping(puff, platform)) {
     const puffRect = puff.getBoundingClientRect();
     const platformRect = platform.getBoundingClientRect();
-
+  
     if (puffRect.bottom >= platformRect.top && gravity >= 0) {
       puffY = platformRect.top - puff.offsetHeight;
       gravity = 0;
       onGround = true;
     }
+  } else if (puffY < window.innerHeight - puff.offsetHeight) {
+    // Not on platform or ground → start falling
+    onGround = false;
   }
 
   // Screen edges
