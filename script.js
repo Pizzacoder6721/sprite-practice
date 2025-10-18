@@ -10,7 +10,9 @@ const keysPressed = {};
 let puffVelocityX = 0;
 let puffVelocityY = 0;
 
-let gravity = 1;
+let gravity;
+
+let onGround = false;
 //The point of this is pretty self-explanatiry
 function updatePuffPos() {
     puff.style.left = `${puffX}px`;
@@ -54,12 +56,19 @@ function gameLoop() {
     if (puffX < 0) puffX = 0;
     if (puffY < 0) puffY = 0;
     if (puffX > screenWidth - puffWidth) puffX = screenWidth - puffWidth;
-    if (puffY > screenHeight - puffHeight) puffY = screenHeight - puffHeight;
+    if (puffY > screenHeight - puffHeight) puffY = screenHeight - puffHeight; onGround = false;
 
-      puffVelocityX *= 0.95;
-      puffVelocityY += gravity;
-      puffX += puffVelocityX;
-      puffY += puffVelocityY;
+    if (onGround){
+        gravity = 0
+    }
+    else{
+        gravity = 1;
+    }
+
+    puffVelocityX *= 0.95;
+    puffVelocityY += gravity;
+    puffX += puffVelocityX;
+    puffY += puffVelocityY;
 
     updatePuffPos();
     requestAnimationFrame(gameLoop);
