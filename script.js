@@ -36,7 +36,7 @@ function gameLoop() {
     const puffHeight = puff.offsetHeight;
 
 
-    if (keysPressed["arrowup"] || keysPressed["w"]) {
+    if ((keysPressed["arrowup"] || keysPressed["w"]) && onGround) {
         gravity = jumpForce;
     }
     if (keysPressed["arrowdown"] || keysPressed["s"]) {
