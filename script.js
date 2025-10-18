@@ -4,7 +4,7 @@ const puff = document.getElementById('puffs');
 let puffX = 0;
 let puffY = 0;
 const puffSpeed = 0.5;
-let jumpForce = -3;
+let jumpForce = -10;
 
 const keysPressed = {};
 
