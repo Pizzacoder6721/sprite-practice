@@ -4,7 +4,7 @@ const puff = document.getElementById('puffs');
 let puffX = 0;
 let puffY = 0;
 const puffSpeed = 0.5;
-let jumpForce = -0.7;
+let jumpForce = -3;
 
 const keysPressed = {};
 
@@ -59,7 +59,7 @@ function gameLoop() {
     }
 
     if (!onGround){
-        gravity = 0.7
+        gravity = 3;
     }
 
     puffVelocityX *= 0.95;
