@@ -54,6 +54,19 @@ function gameLoop() {
     if (puffY < 0) puffY = 0;
     if (puffX > screenWidth - puffWidth) puffX = screenWidth - puffWidth;
     if (puffY > screenHeight - puffHeight) {puffY = screenHeight - puffHeight; onGround = true;}
+
+    const platform = document.getElementById('platform');
+    
+    // Platform collision
+    if (isOverlapping(puff, platform)) {
+        const puffRect = puff.getBoundingClientRect();
+        const platformRect = platform.getBoundingClientRect();
+        if (puffRect.bottom >= platformRect.top && gravity >= 0) {
+            puffY = platformRect.top - puff.offsetHeight; // Land on top
+            gravity = 0;
+            onGround = true;
+        }
+    }     
     else{
         onGround = false;
     }
@@ -70,6 +83,17 @@ function gameLoop() {
     console.log(gravity);
     console.log(onGround);
     console.log(puffVelocityY);
+}
+function isOverlapping(el1, el2) {
+  const rect1 = el1.getBoundingClientRect();
+  const rect2 = el2.getBoundingClientRect();
+
+  return !(
+    rect1.top > rect2.bottom ||
+    rect1.bottom < rect2.top ||
+    rect1.left > rect2.right ||
+    rect1.right < rect2.left
+  );
 }
 updatePuffPos();
 gameLoop();
