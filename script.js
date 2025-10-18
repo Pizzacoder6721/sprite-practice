@@ -3,7 +3,7 @@ const puff = document.getElementById('puffs');
 //movement
 let puffX = 0;
 let puffY = 0;
-const puffSpeed = 5;
+const puffSpeed = 0.5;
 
 const keysPressed = {};
 
