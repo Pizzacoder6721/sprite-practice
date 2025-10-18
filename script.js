@@ -52,7 +52,7 @@ function gameLoop() {
 
     // Collision
     if (puffX < 0) puffX = 0;
-    if (puffY < 0) puffY = 0;
+    if (puffY < 0) puffY = 0; gravity = 0;
     if (puffX > screenWidth - puffWidth) puffX = screenWidth - puffWidth;
     if (puffY > screenHeight - puffHeight) puffY = screenHeight - puffHeight;
 
