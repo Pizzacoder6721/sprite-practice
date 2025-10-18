@@ -56,7 +56,10 @@ function gameLoop() {
     if (puffX < 0) puffX = 0;
     if (puffY < 0) puffY = 0;
     if (puffX > screenWidth - puffWidth) puffX = screenWidth - puffWidth;
-    if (puffY > screenHeight - puffHeight) puffY = screenHeight - puffHeight; onGround = true;
+    if (puffY > screenHeight - puffHeight) {puffY = screenHeight - puffHeight; onGround = true;}
+    else{
+        onGround = false;
+    }
 
     if (onGround){
         gravity = 0;
