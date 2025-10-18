@@ -12,3 +12,11 @@ body {
     top: 50px;
     left: 50px;
 }
+#platform {
+  position: absolute;
+  width: 200px;
+  height: 20px;
+  background-color: black;
+  left: 300px;
+  top: 400px;
+}
