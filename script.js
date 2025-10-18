@@ -72,6 +72,7 @@ function gameLoop() {
 
     updatePuffPos();
     requestAnimationFrame(gameLoop);
+    console.log(gravity);
 }
 updatePuffPos();
 gameLoop();
