@@ -11,7 +11,7 @@ const keysPressed = {};
 let puffVelocityX = 0;
 let puffVelocityY = 0;
 
-let gravity;
+let gravity = 0;
 
 let onGround = false;
 //The point of this is pretty self-explanatiry
