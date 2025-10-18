@@ -59,7 +59,7 @@ function gameLoop() {
     }
 
     if (!onGround){
-        gravity -= 0.3;
+        gravity += 0.3;
     }
 
     puffVelocityX *= 0.95;
@@ -71,6 +71,7 @@ function gameLoop() {
     requestAnimationFrame(gameLoop);
     console.log(gravity);
     console.log(onGround);
+    console.log(puffVelocityY);
 }
 updatePuffPos();
 gameLoop();
