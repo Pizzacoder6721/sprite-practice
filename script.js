@@ -37,7 +37,7 @@ function gameLoop() {
 
 
     if (keysPressed["arrowup"] || keysPressed["w"]) {
-        puffVelocityY -= puffSpeed;
+        gravity = jumpForce;
     }
     if (keysPressed["arrowdown"] || keysPressed["s"]) {
         puffVelocityY += puffSpeed;
