@@ -58,11 +58,8 @@ function gameLoop() {
         onGround = false;
     }
 
-    if (onGround){
-        gravity = 0;
-    }
-    else{
-        gravity = 0.7;
+    if (!onGround){
+        gravity = 0.7
     }
 
     puffVelocityX *= 0.95;
