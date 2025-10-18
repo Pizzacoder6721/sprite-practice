@@ -81,7 +81,8 @@ function gameLoop() {
     const puffRect = puff.getBoundingClientRect();
     const platformRect = platform.getBoundingClientRect();
   
-    if (puffRect.bottom == platformRect.top) {
+    if (puffRect.bottom >= platformRect.top && gravity >= 0) {
+      puffY = platformRect.top - puff.offsetHeight;
       gravity = 0;
       onGround = true;
     }
